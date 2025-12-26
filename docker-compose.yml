@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+  aiclient2api:
+    build: .
+    container_name: aiclient2api
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      ARGS: "--api-key 123456 --host 0.0.0.0"
+    volumes:
+      - ./data/configs:/app/configs
