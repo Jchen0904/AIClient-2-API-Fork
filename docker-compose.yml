@@ -1,8 +1,6 @@
-version: "3.9"
-
 services:
   aiclient2api:
-    build: .
+    image: justlikemaki/aiclient-2-api
     container_name: aiclient2api
     restart: unless-stopped
     ports:
@@ -10,4 +8,4 @@ services:
     environment:
       ARGS: "--api-key 123456 --host 0.0.0.0"
     volumes:
-      - ./data/configs:/app/configs
+      - ./configs:/app/configs
